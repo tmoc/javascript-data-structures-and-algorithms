@@ -3,13 +3,13 @@
   "description": "Building algorithms and data structures to learn.",
   "version": "0.0.0",
   "author": "Tom O'Connell",
-  "main": "./index.js",
   "devDependencies": {
     "mocha": "^1.20.0",
     "chai": "^1.10.0"
   },
   "scripts": {
     "test:hash-table": "cd hash-table && mocha",
-    "test:binary-search": "cd binary-search && mocha"
+    "test:binary-search": "cd binary-search && mocha",
+    "test:merge-sort": "cd merge-sort && mocha"
   }
 }
