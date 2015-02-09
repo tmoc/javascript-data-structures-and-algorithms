@@ -9,6 +9,7 @@
     "chai": "^1.10.0"
   },
   "scripts": {
-    "test:hash-table": "cd hash-table && mocha"
+    "test:hash-table": "cd hash-table && mocha",
+    "test:binary-search": "cd binary-search && mocha"
   }
 }
