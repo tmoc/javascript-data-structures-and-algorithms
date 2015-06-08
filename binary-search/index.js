@@ -5,9 +5,9 @@ var rBinarySearch1 = function (items, value, left, right) {
     left = 0;
   }
   if (right === undefined) {
-    right = items.length;
+    right = items.length - 1;
   }
-  if (left === right) {
+  if (left > right) {
     return -1;
   }
 
@@ -17,7 +17,7 @@ var rBinarySearch1 = function (items, value, left, right) {
     return middle;
   } else if (items[middle] > value) {
 
-    return rBinarySearch1(items, value, left, middle); 
+    return rBinarySearch1(items, value, left, middle - 1); 
   } else {
     return rBinarySearch1(items, value, middle + 1, right);
   }
@@ -25,11 +25,11 @@ var rBinarySearch1 = function (items, value, left, right) {
 
 var rBinarySearch2 = function (items, value) {
   var left = 0;
-  var right = items.length;
+  var right = items.length - 1;
   var middle;
 
   var recurse = function () {
-    if (left === right) {
+    if (left > right) {
       return -1;
     }
 
@@ -38,7 +38,7 @@ var rBinarySearch2 = function (items, value) {
     if (items[middle] === value) {
       return middle;
     } else if (items[middle] > value) {
-      right = middle;
+      right = middle - 1;
       return recurse(); 
     } else {
       left = middle + 1;
@@ -51,16 +51,16 @@ var rBinarySearch2 = function (items, value) {
 
 var iBinarySearch = function (items, value) {
   var left = 0;
-  var right = items.length;
+  var right = items.length - 1;
   var middle;
 
-  while (left < right) {
+  while (left <= right) {
     middle = Math.floor((left + right) / 2);
 
     if (items[middle] === value) {
       return middle;
     } else if (items[middle] > value) {
-      right = middle; 
+      right = middle - 1; 
     } else {
       left = middle + 1;
     }
